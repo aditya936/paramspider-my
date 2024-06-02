@@ -29,7 +29,7 @@ main paraspider i clone but not workfor me so i modify for me
 To install `paramspider`, follow these steps:
 
 ```sh
-git clone https://github.com/devanshbatham/paramspider
+git clone https://github.com/aditya936/paramspider-my.git
 cd paramspider
 pip install .
 ```

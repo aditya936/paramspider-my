@@ -1,0 +1,68 @@
+
+�
+\��d�
+     ��r�ddlZddlZddlZddlZddlZddlZejej���dd�Z    d�Z
+dS)�N)�level�c�
+�gd�S)z
+oads user agents
+    )zsMozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36zHMozilla/5.0 (Windows NT 6.1; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0zrMozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36zIMozilla/5.0 (Windows NT 10.0; WOW64; rv:54.0) Gecko/20100101 Firefox/54.0zyMozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36zuMozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/603.3.8 (KHTML, like Gecko) Version/10.1.2 Safari/603.3.8z�Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36 Edg/89.0.774.45zIMozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; AS; rv:11.0) like Geckoz�Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.96 Safari/537.36 Edge/16.16299z�Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 OPR/45.0.2552.898z�Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Vivaldi/1.8.770.50zNMozilla/5.0 (Windows NT 10.0; Win64; x64; rv:54.0) Gecko/20100101 Firefox/54.0��Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36 Edge/15.15063rzrMozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36�r��A/home/karan0x01/adi/tools/ParamSpider-1.0.1/paramspider/client.py�load_user_agentsr
+s��
+�
+ �
+  �c�P�t��}|�||d�}tt��D]�}tj|��}d|i}    t
+                                         j|||���}|���|cS#t
+j       tf$r/tj
+               d|�d���td��Y��t$r*tj
+                                   ��t!j��Y��wxYwtjd    |�d
+t�d
+   ���t!j��dS)
+              z{
+    Fetches the content of a URL using a random user agent.
+    Retries up to MAX_RETRIES times if the request fails.
+    N)�http�httpsz
+User-Agent)�proxies�headerszError fetching URL z␦. Retrying in 5 seconds...�z3Keyboard Interrupt re ceived. Exiting gracefully...zFailed to fetch URL z after z  retries.)r
+�range�
+       MAX_RETRIES�random�choicerequests�get�raise_for_status�
+exceptions�RequestException�
+ValueError�logging�warning�time�sleep�KeyboardInterrupt�sys�exit�error)�url�proxy�
+                                                                                  user_agents�i�
+user_agentrresponses       r    �fetch_url_contentr)&sK��
+#�$�$�K�
+        ����
+�
+����]�;�/�/�
+�
+ �*�
+��              ��|�C��w�G�G�G�H�
+                                 �
+                                  %�
+                                    %�
+                                      '�
+                                        '�
+                                          '�O�O�O���#�4�j�A�    ␦�      ␦�      ␦�
+                                                                                  �O�Q�#�Q�Q�Q�
+                                                                                               R�
+                                                                                                 R�
+                                                                                                   R�
+                                                                                                     �J�q�M�M�M�M�M� �  �       �       �
+                                                                                                                                         �O�Q�
+                                                                                                                                              R�
+                                                                                                                                                R�
+                                                                                                                                                  R�
+                                                                                                                                                    �H�J�J�J�J�J�       ����
+                   �M�K��K�K�[�K�K�K�L�L�L��H�J�J�J�J�Js�,A4�4AC0�=0C0�/C0)
+                                                                           rr�jsonrr �
+                                                                                      basicConfig�INFOrr
+�)rr    <module>r-s�������
+ �
+  �
+   �
+    �����
+         �
+          �
+           �
+            �
+�
+�
+�
+���'�,�'�'�'�'��

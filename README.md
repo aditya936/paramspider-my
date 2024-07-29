@@ -33,6 +33,7 @@ git clone https://github.com/aditya936/paramspider-my.git
 cd paramspider
 pip install .
 python3 paramspider.py -d google.com  [not https://google.com ]
+[result will save the same directory where u execute the cmd]
 ```
 
 ## Usage
